@@ -51,13 +51,13 @@ class SaveMessage(graphene.Mutation):
     message = graphene.Field(MessageType)
 
     class Arguments:
-        message = graphene.String()
+        text = graphene.String()
         dialog_id = graphene.Int()
         user_id = graphene.Int()
 
-    def mutate(root, info, message, dialog_id=None, user_id=None):
+    def mutate(root, info, text, dialog_id=None, user_id=None):
         current_user = info.context.user
-        if not message:
+        if not text:
             return SaveMessage(
                 status=400,
                 formErrors=json.dumps(
@@ -81,7 +81,7 @@ class SaveMessage(graphene.Mutation):
             dialog = Dialog.objects.create(user1=current_user, user2=user2)
         instance = Message.objects.create(
             user=info.context.user,
-            message=message,
+            text=text,
             dialog=dialog
         )
         return SaveMessage(

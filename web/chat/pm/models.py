@@ -12,4 +12,4 @@ class Message(models.Model):
     dialog = models.ForeignKey(Dialog, on_delete=models.CASCADE, related_name='message')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     date_added = models.DateTimeField(auto_now_add=True)
-    message = models.TextField()
+    text = models.TextField()

@@ -17,8 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import views as auth_views
-
 from graphene_django.views import GraphQLView
+from chat.core import views as core_views
 
 
 class PrivetGraphQLView(LoginRequiredMixin, GraphQLView):
@@ -29,5 +29,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/login/', auth_views.login, name='login'),
     path('logout/', auth_views.logout, name='logout'),
+    path('signup/', core_views.signup, name='signup'),
     path('graphql', PrivetGraphQLView.as_view(graphiql=True), name='qraphql'),
 ]

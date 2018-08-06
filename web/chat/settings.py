@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'chat.pm',
+    'chat.core',
 
     'graphene_django',
 ]

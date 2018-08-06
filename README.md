@@ -14,14 +14,14 @@ How to run this project locally
 
 2.Install dependencies from requirements.txt file.
 
-3. Navigate to the projects root directory and run project with `python manage.py runserver` command.
+3.Navigate to the projects root directory and run project with `python manage.py runserver` command.
 
 
 
 Test queries and mutation
 =============================
 
-API is available at /graphql root.
+API is available at 127.0.0.1:8000/graphql root.
 
 Here is available to create chat messages. 
 
@@ -37,7 +37,7 @@ Here is available to create chat messages.
 }
 ```
 
-Message text is required argument. UserId shoul be provided if not dialogId
+Message text is required argument. ```userId``` shoul be provided if not ```dialogId```
 
 
 Get all messages from the same chat
@@ -59,3 +59,8 @@ Get all messages from the same chat
   }
 }
 ```
+
+
+Only registered users have access to api. There are two auxiliary URLs:
+``` 127.0.0.1:8000/signup ``` - for registration
+``` 127.0.0.1:8000/login ``` - for authorization

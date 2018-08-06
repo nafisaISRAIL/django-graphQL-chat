@@ -5,13 +5,15 @@ This project demonstrates the construction of API using graphQL technology. An e
 
 ## Installation ##
 
-In order to work on your own version of the this project, please **fork this project**.
+In order to work on your own version of the this project, please **fork this repository**.
 
 How to run this project locally
 =============================
 
 1.Create and activate environment
+
 2.Install dependencies from requirements.txt file.
+
 3. Navigate to the projects root directory and run project with `python manage.py runserver` command.
 
 
